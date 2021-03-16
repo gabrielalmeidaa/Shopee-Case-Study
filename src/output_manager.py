@@ -26,6 +26,18 @@ class OutputManager:
         os.system('cls' if os.name == 'nt' else 'clear')
 
     @staticmethod
-    def print_input_error_message(option):
+    def print_input_error_messythage(option):
         print("'{}' is an invalid input option. "
               "Please, input one of the allowed option values.".format(option))
+
+    @staticmethod
+    def print_sale_register_success_message():
+        print("Sale Item registered successfully!")
+
+    @staticmethod
+    def display_ranking(ranking):
+        print("\nRanking Seller's for total sales value: \n")
+        for index, sale_record in enumerate(ranking):
+            print("{}: {}, with the total of ${}".format(
+                index + 1, sale_record.get("_id").title(), sale_record.get("salesTotal")))
+        input("\nPress any key to continue.")

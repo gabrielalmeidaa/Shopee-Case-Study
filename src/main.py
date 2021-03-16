@@ -4,9 +4,11 @@ import mongoengine
 import os
 
 from models.sale_item import SaleItem
+from models.sales_ranking import SalesRanking
 from mongoengine import ValidationError
 
 from output_manager import OutputManager
+
 
 mongoengine.connect('shopee-case-study-database', host='127.0.0.1', port=27017)
 
@@ -22,6 +24,7 @@ def register_sale_item():
     sale_item = SaleItem(**sale_item_data)
     try:
         sale_item.save()
+        OutputManager.print_sale_register_success_message()
     except ValidationError as e:
         OutputManager.print_readable_error_message(e)
 
@@ -36,7 +39,8 @@ def get_input_for_sale_item_data():
 
 
 def display_ranking():
-    raise Exception(NotImplementedError)
+    ranking = SalesRanking.build_ranking()
+    OutputManager.display_ranking(ranking)
 
 
 def execute_option(option):
