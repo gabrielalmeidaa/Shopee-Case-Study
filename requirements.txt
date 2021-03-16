@@ -1,1 +1,2 @@
-mongoengine== 0.23.0
+mongoengine==0.23.0
+pytest==6.2.2
