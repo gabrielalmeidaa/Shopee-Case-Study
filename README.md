@@ -6,7 +6,7 @@ and visualize a list of all sales ranked by sellers with the highest to lowest a
 
 **Very Important**: The defined allowed seller's names (mostly randomly generated) are:
 `
-Tammy Reed, Kathryn Curry, Wanda Vazquez, Fulano e Teste
+Tammy Reed, Kathryn Curry, Wanda Vazquez, Fulano, Teste
 `
 
 ## How to Run
