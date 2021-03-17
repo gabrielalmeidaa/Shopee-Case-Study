@@ -1,16 +1,14 @@
-import sys
-
-import mongoengine
 import os
+import sys
 
 from models.sale_item import SaleItem
 from models.sales_ranking import SalesRanking
 from mongoengine import ValidationError
-
 from output_manager import OutputManager
 
+from settings import setup_mongodb_connection
 
-mongoengine.connect('shopee-case-study-database', host='127.0.0.1', port=27017)
+setup_mongodb_connection()
 
 
 def allowed_options():

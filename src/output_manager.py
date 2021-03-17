@@ -13,10 +13,10 @@ class OutputManager:
     @staticmethod
     def print_readable_error_message(exception):
         if 'seller_name' in exception.errors.keys():
-            print("Input seller is not one of the five allowed sellers. " \
+            print("\nInput seller is not one of the five allowed sellers. " \
                   "Please, input a valid seller name.")
         if 'item_value' in exception.errors.keys():
-            print("Item value is invalid. Make sure to not input negative numbers " \
+            print("\nItem value is invalid. Make sure to not input negative numbers " \
                   "and to use '.' as the separator for decimal numbers.")
         else:
             print(exception.errors)
@@ -41,3 +41,8 @@ class OutputManager:
             print("{}: {}, with the total of ${}".format(
                 index + 1, sale_record.get("_id").title(), sale_record.get("salesTotal")))
         input("\nPress any key to continue.")
+
+    @staticmethod
+    def print_input_error_message(option):
+        print("'{}' is an invalid input option. "
+              "Please, input one of the allowed option values.".format(option))
