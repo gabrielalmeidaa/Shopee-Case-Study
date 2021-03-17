@@ -5,7 +5,7 @@ from models.sale_item import SaleItem
 from mongoengine import Document, StringField, DateTimeField, ValidationError, \
     ObjectIdField, ReferenceField, DecimalField
 
-ALLOWED_SELLERS = ['Tammy Reed', 'Kathryn Curry', 'Wanda Vazquez', 'Fulano', 'Teste']
+ALLOWED_SELLERS = ['tammy reed', 'kathryn curry', 'wanda vazquez', 'fulano', 'teste']
 
 
 def valid_seller_name(seller_name):
