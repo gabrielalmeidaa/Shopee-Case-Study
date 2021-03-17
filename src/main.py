@@ -1,12 +1,13 @@
 import os
 import sys
 
-from models.sale_item import SaleItem
+from models.sale_register import SaleRegister
 from models.sales_ranking import SalesRanking
 from mongoengine import ValidationError
 from output_manager import OutputManager
 
 from settings import setup_mongodb_connection
+
 
 setup_mongodb_connection()
 
@@ -19,8 +20,8 @@ def register_sale_item():
     OutputManager.clear_terminal()
     print("Please input the requested Sale Item information:")
     sale_item_data = get_input_for_sale_item_data()
-    sale_item = SaleItem(**sale_item_data)
     try:
+        sale_item = SaleRegister.register_sale(**sale_item_data)
         sale_item.save()
         OutputManager.print_sale_register_success_message()
     except ValidationError as e:
